@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "ibase=water; $WATER" | tr 'water' '0123456789 | tr -d '\n' ; echo "+" ; echo "ibase=stir; $STIR" | tr 'stir' '0123456789' | tr -d '\n' | echo "$(cat -)"; echo "quit" | bc | tr '0123456789' 'bestchol'
+printf "%o\n" $((5#$(echo $WATER | tr 'water' '01234') + 5#$(echo $STIR | tr 'stir.' '01234'))) | tr '01234567' 'bestchol'
